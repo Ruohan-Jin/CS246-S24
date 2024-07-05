@@ -33,7 +33,7 @@ ostream& operator<<(ostream& out, const Vec& v) {
 // Option1 : loop through the nodes and count them, O(n)
 // Option2 : store the length as a field of list and keep it up to date, O(1)
 // Option2 is preferred because it's faster 
-//   and adds only a smalll amount of overhead.
+//   and adds only a small amount of overhead.
 // Now consider <=> in the special case of equality checking.
 (l1 <=> l2) == 0 // testing if l1 == l2
 
