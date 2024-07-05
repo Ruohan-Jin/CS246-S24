@@ -157,7 +157,7 @@ class Pond {
  ------             ------
 | List | *-------->| Node |
  ------          *  ------
-// *是实心菱形
+// 第一个*是实心菱形
 // This diagram implies that `List` owns all of the `Node`s 
 //   and is responsible for deleting all of them.
 // Possible iterative(loop-based) management of pointers 
