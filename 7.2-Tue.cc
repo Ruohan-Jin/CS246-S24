@@ -61,7 +61,7 @@ vector<int> v2{4, 5}; // vector of [4, 5]
 vector<int> v3(4, 5); // 4 elements of value 5 -> [5, 5, 5, 5]
 vector v4{4, 5, 6, 7};  // compiler deduces we want a vector of ints
 v1.emplace_back(1); // add the value 1 as an element to the back of v1
-v1.push_back(2);    // add the value 2 as an element  to the back of v1
+v1.push_back(2);    // add the value 2 as an element to the back of v1
 
 // Using iterators of vectors:
 for ( int i = 0; i < v4.size(); ++i ) {
@@ -79,7 +79,7 @@ for ( int n : v4 ) {
 for ( vector<int>::reverse_iterator it = v4.rbegin(); it != v4.rend(); ++it ) {
   cout << *it << endl;
 }
-// Vector based functions:
+// Vector-based functions:
 v4.front(); // returns first element v4[0]
 v4.back(); // returns last element
 v4.push_back(0); // adds 0 to end of vector
