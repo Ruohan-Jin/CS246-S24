@@ -41,6 +41,7 @@ class List {
   Node* theList;
 
 public:
+  // auto : std::strong_ordering
   auto operator<=>(const List& rhs) const {
     if (!theList && !rhs.theList) {
       return std::strong_ordering::equal;
@@ -72,6 +73,10 @@ if (*p <=> m2 < 0) ... // needs to dereference if its a pointer
 //   but obviously you don't have to.
 //   If you write `operator==`, the compiler will generator `operator!=` 
 //   but the reverse is not true.
+// implement == 可以自动得到 !=
+// implement <=> 可以自动得到 <=, <, >, >=
+// 如果operator<=> is defined as default也可以自动得到 == !=
+auto operator<=>(const Vec& other) const = default;
 
 
 // ********** System Modeling **********
@@ -85,7 +90,7 @@ if (*p <=> m2 < 0) ... // needs to dereference if its a pointer
 // Vec                     - class name
 // --------------------
 // -x: integer             - fields (optional)
-// -y: integer             - '+' means public, '-' means private
+// -y: integer             - '+' public, '-' private, '#' protected
 // --------------------
 // +getX(): integer        - methods (optional)
 // +setX(newX: integer)

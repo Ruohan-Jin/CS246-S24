@@ -46,6 +46,9 @@ class Comic: public Book {
 Book b{"A small book", "Papa Smurf", 50}; // not heavy
 Comic c{"A Big Comic", "mr.comic writer", 40, "Antman"}; // heavy
 cout << b.isHeavy() << c.isHeavy(); // false true
+b = c; // no compiling error
+c = b; // error: 
+// no match for ‘operator=’ (operand types are ‘Comic@comic’ and ‘Book@book’)
 Book b = Comic{"A Big Comic", "mr.comic writer", 40, "Antman"};
 cout << b.isHeavy(); // what do we get? Book::isHeavy() runs
 // WHY?
@@ -151,7 +154,7 @@ public:
 // 2. Fields' destructors run in reverse declaration order
 // 3. Repeat steps 1-3 for the base class (new! to support subclassing)
 // 4. Space is deallocated
-// Always makes the destructor virtual in classes that are meant to be subclasses.
+// Always makes the destructor virtual in classes that are meant to be subclassed.
 virtual ~X() // This destructor doesn't do anything 
 // but we create it anyway so we can make the destructor virtual
 
@@ -193,3 +196,6 @@ Coop c;
 // In UML, we represent virtual and pure virtual methods using italics. 
 //   Represent abstract classes by italicizing the class name. 
 //   So can also use asterisks to show this when italics are hard to do.
+
+// 20-purevit 
+// big five associated with inheritance
